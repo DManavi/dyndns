@@ -1,0 +1,26 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@_/ipify-org": ["packages/ipify-org/src/index.ts"],
+      "@_/shared": ["packages/shared/src/index.ts"],
+      "@dyndns/digital-ocean": ["packages/digital-ocean/src/index.ts"],
+      "@dyndns/hetzner": ["packages/hetzner/src/index.ts"],
+      "@dyndns/vultr": ["packages/vultr/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
