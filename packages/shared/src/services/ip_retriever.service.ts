@@ -1,11 +1,12 @@
+export enum IPFamily {
+  V4 = 'v4',
+  V6 = 'v6',
+}
+
 export interface IPRetrieverService {
   /**
-   * Retrieve IPv4
+   * Retrieve requested IP address family
+   * @param {IPFamily} family IP address family
    */
-  retrieveIPv4(): Promise<string>;
-
-  /**
-   * Retrieve IPv6
-   */
-  retrieveIPv6(): Promise<string>;
+  retrieveIP(family: IPFamily): Promise<string>;
 }
