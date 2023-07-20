@@ -1,7 +1,4 @@
-export enum IPFamily {
-  V4 = 'v4',
-  V6 = 'v6',
-}
+import { IPFamily } from './shared';
 
 export interface IPRetrieverService {
   /**

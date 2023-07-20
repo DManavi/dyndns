@@ -34,8 +34,11 @@ yargs(hideBin(process.argv))
         })
         .demandOption(['key', 'domain', 'subdomain']),
     async (argv) => {
+
       const ipRetriever = new IPRetrieverServiceImpl();
       const dnsUpdater = new DigitalOceanDnsUpdaterService();
+
+      const ipAddress = argv.ip === 'v4' ? await ipRetriever.retrieveIPv4() : await ipRetriever.retrieveIPv6();
 
       switch (argv.ip) {
         case 'v4': {

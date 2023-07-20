@@ -6,7 +6,7 @@ import { IPFamily, IPRetrieverService } from '@_/shared';
 const IPV4_ENDPOINT = 'https://api.ipify.org/?format=json';
 const IPV6_ENDPOINT = 'https://api64.ipify.org?format=json';
 
-export class IPRetrieverServiceImpl implements IPRetrieverService {
+export class IpifyOrgIPRetrieverService implements IPRetrieverService {
   async retrieveIP(family: IPFamily): Promise<string> {
     let endpoint: string;
 

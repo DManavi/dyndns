@@ -3,13 +3,13 @@ import * as z from 'zod';
 // project-level
 import { IPFamily } from '@_/shared';
 // package-level
-import { IPRetrieverServiceImpl } from './ip_retriever.service';
+import { IpifyOrgIPRetrieverService } from './ipify_org.ip_retriever';
 
-describe('IPRetrieverServiceImpl', () => {
-  let service: IPRetrieverServiceImpl;
+describe('ipify.org IP retriever', () => {
+  let service: IpifyOrgIPRetrieverService;
 
   beforeAll(() => {
-    service = new IPRetrieverServiceImpl();
+    service = new IpifyOrgIPRetrieverService();
   });
 
   describe('success', () => {
