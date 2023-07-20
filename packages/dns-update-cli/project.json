@@ -1,36 +1,36 @@
 {
-  "name": "vultr",
+  "name": "dns-update-cli",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/vultr/src",
+  "sourceRoot": "packages/dns-update-cli/src",
   "projectType": "library",
   "targets": {
     "build": {
       "executor": "@nx/esbuild:esbuild",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/packages/vultr",
-        "main": "packages/vultr/src/index.ts",
-        "tsConfig": "packages/vultr/tsconfig.lib.json",
-        "assets": ["packages/vultr/*.md"],
+        "outputPath": "dist/packages/dns-update-cli",
+        "main": "packages/dns-update-cli/src/index.ts",
+        "tsConfig": "packages/dns-update-cli/tsconfig.lib.json",
+        "assets": ["packages/dns-update-cli/*.md"],
         "generatePackageJson": true
       }
     },
     "publish": {
-      "command": "node tools/scripts/publish.mjs vultr {args.ver} {args.tag}",
+      "command": "node tools/scripts/publish.mjs dns-update-cli {args.ver} {args.tag}",
       "dependsOn": ["build"]
     },
     "lint": {
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["packages/vultr/**/*.ts"]
+        "lintFilePatterns": ["packages/dns-update-cli/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "packages/vultr/jest.config.ts",
+        "jestConfig": "packages/dns-update-cli/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {

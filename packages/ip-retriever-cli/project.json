@@ -1,36 +1,36 @@
 {
-  "name": "hetzner",
+  "name": "ip-retriever-cli",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/hetzner/src",
+  "sourceRoot": "packages/ip-retriever-cli/src",
   "projectType": "library",
   "targets": {
     "build": {
       "executor": "@nx/esbuild:esbuild",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/packages/hetzner",
-        "main": "packages/hetzner/src/index.ts",
-        "tsConfig": "packages/hetzner/tsconfig.lib.json",
-        "assets": ["packages/hetzner/*.md"],
+        "outputPath": "dist/packages/ip-retriever-cli",
+        "main": "packages/ip-retriever-cli/src/index.ts",
+        "tsConfig": "packages/ip-retriever-cli/tsconfig.lib.json",
+        "assets": ["packages/ip-retriever-cli/*.md"],
         "generatePackageJson": true
       }
     },
     "publish": {
-      "command": "node tools/scripts/publish.mjs hetzner {args.ver} {args.tag}",
+      "command": "node tools/scripts/publish.mjs ip-retriever-cli {args.ver} {args.tag}",
       "dependsOn": ["build"]
     },
     "lint": {
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["packages/hetzner/**/*.ts"]
+        "lintFilePatterns": ["packages/ip-retriever-cli/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "packages/hetzner/jest.config.ts",
+        "jestConfig": "packages/ip-retriever-cli/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
