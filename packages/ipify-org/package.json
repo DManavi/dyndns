@@ -1,0 +1,11 @@
+{
+  "name": "@dyndns/ipify",
+  "version": "0.0.1",
+  "type": "commonjs",
+  "bin": "bin/ipify_cli.cjs",
+  "dependencies": {
+    "error-lib": "^2.0.1",
+    "yargs": "^17.7.2",
+    "zod": "^3.21.4"
+  }
+}

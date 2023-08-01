@@ -1,0 +1,84 @@
+{
+  "name": "ipify-org",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/ipify-org/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/ipify-org",
+        "main": "packages/ipify-org/src/index.ts",
+        "tsConfig": "packages/ipify-org/tsconfig.lib.json",
+        "assets": [
+          "packages/ipify-org/*.md",
+          "packages/ipify-org/bin/**/*.*js"
+        ],
+        "additionalEntryPoints": [
+          "packages/ipify-org/bin/ipify.ts"
+        ],
+        "generatePackageJson": true,
+        "external": [
+          "yargs",
+          "zod",
+          "error-lib"
+        ],
+        "format": [
+          "cjs",
+          "esm"
+        ],
+        "platform": "node"
+      }
+    },
+    "declarations": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "packages/ipify-org",
+        "commands": [
+          "npm-dts -e packages/ipify-org/src/index.ts -o dist/packages/ipify-org/ -r dist/packages/ipify-org generate"
+        ],
+        "parallel": false
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs ipify-org {args.ver} {args.tag}",
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "packages/ipify-org/**/*.ts"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "packages/ipify-org/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": []
+}

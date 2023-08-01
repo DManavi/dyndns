@@ -1,10 +1,8 @@
 // package-level
 import { IPFamily } from './shared';
 
-export interface IPRetrieverService {
-  /**
-   * Retrieve public IP address of the requested family
-   * @param {IPFamily} family IP address family
-   */
-  retrieveIP(family: IPFamily): Promise<string>;
-}
+/**
+ * Retrieve public IP address of the requested family
+ * @param {IPFamily} family IP address family
+ */
+export type IPRetriever = (family: IPFamily) => Promise<string>;

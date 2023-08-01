@@ -1,23 +1,25 @@
 // public
 import { BadRequestError } from 'error-lib';
 // project-level
-import { IPFamily } from '@_/shared';
+import { IPFamily, IPRetriever } from '@_/shared';
+export { IPFamily };
 
-export class IpifyOrgIPRetrieverService implements IPRetrieverService {
-  protected static API_V4_URL = 'https://api.ipify.org/?format=json';
-  protected static API_V6_URL = 'https://api64.ipify.org?format=json';
+const API_V4_URL = 'https://api.ipify.org/?format=json';
+const API_V6_URL = 'https://api64.ipify.org?format=json';
 
-  async retrieveIP(family: IPFamily): Promise<string> {
+export const create =
+  (): IPRetriever =>
+  async (family: IPFamily): Promise<string> => {
     let endpoint: string;
 
     switch (family) {
       case IPFamily.V4: {
-        endpoint = IpifyOrgIPRetrieverService.API_V4_URL;
+        endpoint = API_V4_URL;
         break;
       }
 
       case IPFamily.V6: {
-        endpoint = IpifyOrgIPRetrieverService.API_V6_URL;
+        endpoint = API_V6_URL;
         break;
       }
 
@@ -36,5 +38,4 @@ export class IpifyOrgIPRetrieverService implements IPRetrieverService {
     const body: { ip: string } = await resp.json();
 
     return body.ip;
-  }
-}
+  };
