@@ -17,8 +17,10 @@
     "paths": {
       "@_/shared": ["packages/shared/src/index.ts"],
       "@dyndns/digital-ocean": ["packages/digital-ocean/src/index.ts"],
-      "@dyndns/ip": ["packages/ip-retriever-cli/src/index.ts"],
-      "@dyndns/update": ["packages/dns-update-cli/src/index.ts"]
+      "@dyndns/hetzner": ["packages/hetzner-cli/src/index.ts"],
+      "@dyndns/ip": ["packages/ip-retriever-cli/src/index.js"],
+      "@dyndns/ipify-org": ["packages/ipify-org-cli/src/index.ts"],
+      "@dyndns/lib": ["packages/lib/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,16 +1,32 @@
+// package-level
 import { DnsRecordType } from './shared';
+
+export type UpdateRecordOpts = {
+  /**
+   * Subdomain address
+   */
+  subdomain: string;
+
+  /**
+   * Record type
+   */
+  recordType: DnsRecordType;
+
+  /**
+   * Addresses (hostnames or IP addresses) to set
+   */
+  addresses: Array<string>;
+
+  /**
+   * Time-to-live
+   */
+  ttl?: number;
+};
 
 export interface DnsUpdater {
   /**
    * Update DNS record
-   * @param {string} subdomain Target subdomain
-   * @param {DnsRecordType} recordType DNS record type
-   * @param {Array<string>} addresses Addresses to set
+   * @param opts Update record options
    */
-
-  updateRecord(
-    subdomain: string,
-    recordType: DnsRecordType,
-    addresses: Array<string>
-  ): Promise<void>;
+  updateRecord(opts: UpdateRecordOpts): Promise<void>;
 }

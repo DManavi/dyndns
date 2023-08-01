@@ -1,35 +1,39 @@
 {
-  "name": "ip-retriever-cli",
+  "name": "ipify-org-cli",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/ip-retriever-cli/src",
+  "sourceRoot": "packages/ipify-org-cli/src",
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@nx/js:tsc",
+      "executor": "@nx/esbuild:esbuild",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/packages/ip-retriever-cli",
-        "main": "packages/ip-retriever-cli/src/index.js",
-        "tsConfig": "packages/ip-retriever-cli/tsconfig.lib.json",
-        "assets": ["packages/ip-retriever-cli/*.md"]
+        "outputPath": "dist/packages/ipify-org-cli",
+        "main": "packages/ipify-org-cli/src/index.ts",
+        "tsConfig": "packages/ipify-org-cli/tsconfig.lib.json",
+        "assets": ["packages/ipify-org-cli/*.md"],
+        "format": ["cjs"],
+        "esbuildOptions": {
+          "target": "node"
+        }
       }
     },
     "publish": {
-      "command": "node tools/scripts/publish.mjs ip-retriever-cli {args.ver} {args.tag}",
+      "command": "node tools/scripts/publish.mjs ipify-org-cli {args.ver} {args.tag}",
       "dependsOn": ["build"]
     },
     "lint": {
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["packages/ip-retriever-cli/**/*.js"]
+        "lintFilePatterns": ["packages/ipify-org-cli/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "packages/ip-retriever-cli/jest.config.js",
+        "jestConfig": "packages/ipify-org-cli/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {

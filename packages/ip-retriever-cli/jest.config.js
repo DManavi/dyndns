@@ -1,5 +1,5 @@
 /* eslint-disable */
-export default {
+module.exports = {
   displayName: 'ip-retriever-cli',
   preset: '../../jest.preset.js',
   testEnvironment: 'node',
