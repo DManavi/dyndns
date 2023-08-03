@@ -28,8 +28,7 @@
         "cwd": "packages/ipify-org",
         "commands": ["dts-bundle-generator --config dts.config.json"],
         "parallel": false
-      },
-      "dependsOn": ["build"]
+      }
     },
     "publish": {
       "command": "node tools/scripts/publish.mjs ipify-org {args.ver} {args.tag}",

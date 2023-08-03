@@ -1,14 +1,15 @@
 // public
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
+// project-level
+import { IPFamily } from '@_/shared';
 // package-level
 import * as ipifyClient from '../src';
-import { IPFamily } from '@_/shared';
 
-yargs(hideBin(process.argv))
+yargs(hideBin(process.argv.slice(2)))
   .command(
-    'ipify',
-    'ipify-org IP retriever command-line interface',
+    ['get', '$0'],
+    'ipify.org command-line interface (CLI)',
     (yargs) =>
       yargs.option('ip', {
         describe: 'IP address version',
@@ -22,4 +23,4 @@ yargs(hideBin(process.argv))
       console.log(ipAddress);
     }
   )
-  .parse();
+  .help().argv;
