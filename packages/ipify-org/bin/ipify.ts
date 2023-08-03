@@ -6,7 +6,7 @@ import { IPFamily } from '@_/shared';
 // package-level
 import * as ipifyClient from '../src';
 
-yargs(hideBin(process.argv.slice(2)))
+yargs(hideBin(process.argv))
   .command(
     ['get', '$0'],
     'ipify.org command-line interface (CLI)',
@@ -23,4 +23,5 @@ yargs(hideBin(process.argv.slice(2)))
       console.log(ipAddress);
     }
   )
-  .help().argv;
+  .help()
+  .parse();
