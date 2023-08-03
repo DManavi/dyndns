@@ -4,7 +4,7 @@
     "rootDir": ".",
     "sourceMap": true,
     "declaration": false,
-    "moduleResolution": "node",
+    "moduleResolution": "Node16",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
@@ -17,9 +17,7 @@
     "paths": {
       "@_/shared": ["packages/shared/src/index.ts"],
       "@dyndns/digital-ocean": ["packages/digital-ocean/src/index.ts"],
-      "@dyndns/ipify": ["packages/ipify-org/src/index.ts"],
-      "@dyndns/ipify-org": ["packages/ipify-org-cli/src/index.ts"],
-      "tsc-test": ["packages/tsc-test/src/index.ts"]
+      "@dyndns/ipify": ["packages/ipify-org/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

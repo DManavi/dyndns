@@ -1,9 +1,0 @@
-{
-  "name": "@dyndns/ipify-org",
-  "version": "0.0.1",
-  "type": "commonjs",
-  "dependencies": {
-    "yargs": "^17.7.2",
-    "zod": "^3.21.4"
-  }
-}

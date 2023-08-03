@@ -1,9 +1,21 @@
 {
   "name": "@dyndns/ipify",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "type": "commonjs",
-  "bin": "bin/ipify_cli.cjs",
-  "dependencies": {
+  "main": "./src/index.cjs",
+  "module": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "bin": "./bin/ipify_cli.cjs",
+  "homepage": "https://github.com/dmanavi/dyndns",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dmanavi/dyndns.git",
+    "directory": "packages/ipify-org"
+  },
+  "bugs": {
+    "url": "https://github.com/dmanavi/dyndns"
+  },
+  "peerDependencies": {
     "error-lib": "^2.0.1",
     "yargs": "^17.7.2",
     "zod": "^3.21.4"

@@ -2,6 +2,7 @@
 import { BadRequestError } from 'error-lib';
 // project-level
 import { IPFamily, IPRetriever } from '@_/shared';
+export { IPFamily } from '@_/shared';
 
 const API_V4_URL = 'https://api.ipify.org/?format=json';
 const API_V6_URL = 'https://api64.ipify.org?format=json';

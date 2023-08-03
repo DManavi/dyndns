@@ -3,6 +3,9 @@
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
     "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "noEmitOnError": true,
     "types": ["node"]
   },
   "include": ["bin/**/*.ts", "src/**/*.ts"],
