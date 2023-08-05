@@ -1,11 +1,15 @@
 {
   "name": "@dyndns/ipify",
-  "version": "1.0.2",
+  "version": "1.0.4",
+  "license": "LGPL-3.0-only",
   "type": "commonjs",
   "main": "./src/index.cjs",
   "module": "./src/index.js",
   "types": "./src/index.d.ts",
-  "bin": "./bin/ipify_cli.cjs",
+  "bin": {
+    ".": "./bin/ipify_cli.cjs",
+    "dd-ipify": "./bin/ipify_cli.cjs"
+  },
   "homepage": "https://github.com/dmanavi/dyndns",
   "repository": {
     "type": "git",

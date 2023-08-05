@@ -13,7 +13,8 @@
         "tsConfig": "packages/ipify-org/tsconfig.lib.json",
         "assets": [
           "packages/ipify-org/*.md",
-          "packages/ipify-org/bin/**/*.*js"
+          "packages/ipify-org/bin/**/*.*js",
+          "{workspaceRoot}/LICENSE"
         ],
         "additionalEntryPoints": ["packages/ipify-org/bin/ipify.ts"],
         "generatePackageJson": true,
