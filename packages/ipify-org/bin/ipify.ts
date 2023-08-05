@@ -7,6 +7,7 @@ import { IPFamily } from '@_/shared';
 import * as ipifyClient from '../src';
 
 yargs(hideBin(process.argv))
+  .env('DYNDNS_IPIFY')
   .command(
     ['get', '$0'],
     'ipify.org command-line interface (CLI)',
