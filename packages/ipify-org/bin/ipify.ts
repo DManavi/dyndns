@@ -24,5 +24,4 @@ yargs(hideBin(process.argv))
       console.log(ipAddress);
     }
   )
-  .help()
-  .parse();
+  .help().argv;
