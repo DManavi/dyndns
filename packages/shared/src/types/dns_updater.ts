@@ -1,11 +1,16 @@
 // package-level
 import { DnsRecordType } from './shared';
 
-export type UpdateRecordOpts = {
+export type DnsUpdaterOpts = {
   /**
-   * Subdomain address
+   * Root domain
    */
-  subdomain: string;
+  domainName: string;
+
+  /**
+   * Subdomain
+   */
+  subdomain?: string;
 
   /**
    * Record type
@@ -13,20 +18,24 @@ export type UpdateRecordOpts = {
   recordType: DnsRecordType;
 
   /**
-   * Addresses (hostnames or IP addresses) to set
+   * Record data
    */
-  addresses: Array<string>;
+  data: string;
 
   /**
    * Time-to-live
    */
   ttl?: number;
+
+  /**
+   * Always update DNS record (regardless of passing the same IP over and over again)
+   */
+  forceUpdate?: boolean;
 };
 
-export interface DnsUpdater {
-  /**
-   * Update DNS record
-   * @param opts Update record options
-   */
-  updateRecord(opts: UpdateRecordOpts): Promise<void>;
+export enum DnsUpdateResult {
+  Done = 'done',
+  NotRequired = 'not_required',
 }
+
+export type DnsUpdater = (opts: DnsUpdaterOpts) => Promise<DnsUpdateResult>;

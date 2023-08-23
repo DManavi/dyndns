@@ -6,5 +6,4 @@ export enum IPFamily {
 export enum DnsRecordType {
   A = 'a',
   AAAA = 'aaaa',
-  CName = 'cname',
 }
