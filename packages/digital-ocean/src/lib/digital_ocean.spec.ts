@@ -1,4 +1,4 @@
-import { digitalOcean } from './digital_ocean';
+import { digitalOcean } from './digital-ocean';
 
 describe('digitalOcean', () => {
   it('should work', () => {

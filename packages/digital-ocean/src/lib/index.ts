@@ -1,1 +1,1 @@
-export * from './digital_ocean';
+export * from './digital-ocean';
