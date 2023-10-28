@@ -15,11 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "#lib/*": ["packages/lib/src/*"],
       "@_/shared": ["packages/shared/src/index.ts"],
       "@dyndns/do": ["packages/digital-ocean/src/index.ts"],
-      "@dyndns/hetzner": ["packages/hetzner/src/index.ts"],
-      "@dyndns/ipify": ["packages/ipify-org/src/index.ts"],
-      "@dyndns/vultr": ["packages/vultr/src/index.ts"]
+      "@dyndns/ipify": ["packages/ipify-org/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
