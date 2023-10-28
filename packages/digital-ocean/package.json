@@ -1,5 +1,27 @@
 {
-  "name": "@dyndns/digital-ocean",
+  "name": "@dyndns/do",
   "version": "0.0.1",
-  "type": "commonjs"
+  "type": "commonjs",
+  "license": "LGPL-3.0-only",
+  "main": "./src/index.cjs",
+  "module": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "bin": {
+    ".": "./bin/do_cli.cjs",
+    "dd-do": "./bin/do_cli.cjs"
+  },
+  "homepage": "https://github.com/dmanavi/dyndns",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dmanavi/dyndns.git",
+    "directory": "packages/digital-ocean"
+  },
+  "bugs": {
+    "url": "https://github.com/dmanavi/dyndns"
+  },
+  "peerDependencies": {
+    "error-lib": "^2.0.1",
+    "yargs": "^17.7.2",
+    "zod": "^3.21.4"
+  }
 }
