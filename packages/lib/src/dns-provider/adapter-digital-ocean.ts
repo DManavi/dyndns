@@ -1,9 +1,6 @@
 // npm-level
-import {
-  create as createAxiosClient,
-  AxiosInstance,
-  AxiosResponse,
-} from 'axios';
+import { AxiosInstance, AxiosResponse } from 'axios';
+import axios from 'axios';
 import {
   ApplicationError,
   BadRequestError,
@@ -221,7 +218,7 @@ export class DigitalOceanAdapter implements DNSProvider {
   }
 
   protected createHTTPClient(baseURL: string, apiKey: string): AxiosInstance {
-    return createAxiosClient({
+    return axios.create({
       baseURL,
 
       headers: {
