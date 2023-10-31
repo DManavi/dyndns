@@ -1,10 +1,31 @@
 {
   "name": "dyndns",
+  "description": "Composable Dynamic DNS client",
   "private": true,
   "license": "LGPL-3.0-only",
-  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DManavi/dyndns"
+  },
+  "author": {
+    "name": "Danial Manavi",
+    "email": "me@dmanavi.com",
+    "url": "https://dmanavi.com"
+  },
+  "bugs": {
+    "url": "https://github.com/DManavi/dyndns/issues"
+  },
+  "homepage": "https://github.com/DManavi/dyndns#readme",
   "workspaces": [
     "packages/*"
+  ],
+  "keywords": [
+    "dns",
+    "dyndns",
+    "dynamic",
+    "dynamic-dns",
+    "dns-client",
+    "dns-server"
   ],
   "devDependencies": {
     "@nx/esbuild": "16.5.3",
@@ -37,8 +58,7 @@
     "axios": "^1.6.0",
     "error-lib": "^2.0.1",
     "tslib": "^2.3.0",
-    "yargs": "^17.7.2",
-    "zod": "^3.21.4"
+    "yargs": "^17.7.2"
   },
   "nx": {
     "includedScripts": []
